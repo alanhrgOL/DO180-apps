@@ -1,0 +1,151 @@
+[student@workstation ~]$ git config --global credential.helper cache
+[student@workstation ~]$ lab-configure
+
+This script configures the connection parameters to access the OpenShift cluster for your lab scripts
+
+ · Enter the API Endpoint: https://api.na46a.prod.ole.redhat.com:6443
+ · Enter the Username: zncswo
+ · Enter the Password: be580f7b0039451693a5
+ · Enter the GitHub Account Name: alanhrgOL
+ · Enter the Quay.io Account Name: alan_r
+
+You entered:
+ · API Endpoint:			https://api.na46a.prod.ole.redhat.com:6443
+ · Username:				zncswo
+ · Password:				be580f7b0039451693a5
+ · GitHub Account Name:			alanhrgOL
+ · Quay.io Account Name:		alan_r
+
+Generated config:
+ · API Endpoint:			https://api.na46a.prod.ole.redhat.com:6443
+ · Wildcard Domain:			apps.na46a.prod.ole.redhat.com
+ · Nexus Server Host:			nexus-common.apps.na46a.prod.ole.redhat.com
+ · Username:				zncswo
+ · Password:				be580f7b0039451693a5
+ · GitHub Account Name:			alanhrgOL
+ · Quay.io Account Name:		alan_r
+
+Verifying your API Endpoint...
+
+ERROR:
+Cannot connect to an OpenShift 4.5 API using your URL.
+Please verify you network connectivity and that the URL does not point to an OpenShift 3.x nor to a non-OpenShift Kubernetes API.
+[student@workstation ~]$ lab-configure
+
+This script configures the connection parameters to access the OpenShift cluster for your lab scripts
+
+ · Enter the API Endpoint: https://api.na46a.prod.ole.redhat.com:6443
+ · Enter the Username: zncswo
+ · Enter the Password: be580f7b0039451693a5
+ · Enter the GitHub Account Name: alanhrgOL
+ · Enter the Quay.io Account Name: alan_r
+
+You entered:
+ · API Endpoint:			https://api.na46a.prod.ole.redhat.com:6443
+ · Username:				zncswo
+ · Password:				be580f7b0039451693a5
+ · GitHub Account Name:			alanhrgOL
+ · Quay.io Account Name:		alan_r
+
+Generated config:
+ · API Endpoint:			https://api.na46a.prod.ole.redhat.com:6443
+ · Wildcard Domain:			apps.na46a.prod.ole.redhat.com
+ · Nexus Server Host:			nexus-common.apps.na46a.prod.ole.redhat.com
+ · Username:				zncswo
+ · Password:				be580f7b0039451693a5
+ · GitHub Account Name:			alanhrgOL
+ · Quay.io Account Name:		alan_r
+
+Verifying your API Endpoint...
+
+Verifying your Nexus host...
+
+Verifying your OpenShift developer user credentials...
+
+Verifying your GitHub account name...
+
+Verifying your Quay.io account name...
+
+Verifying your cluster configuration...
+
+Saving your lab configuration file...
+
+All fine, lab config saved. You can now proceed with your exercises.
+
+If you need to modify the configuration, rerun this script or directly modify the values in /usr/local/etc/ocp4.config.
+
+[student@workstation ~]$ git clone https://github.com/alanhrgOL/DO180-apps
+Cloning into 'DO180-apps'...
+remote: Enumerating objects: 78, done.
+remote: Total 78 (delta 0), reused 0 (delta 0), pack-reused 78
+Unpacking objects: 100% (78/78), done.
+[student@workstation ~]$ git status
+fatal: not a git repository (or any of the parent directories): .git
+[student@workstation ~]$ ls
+Desktop  DO180-apps  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+[student@workstation ~]$ cd D0180-apps
+bash: cd: D0180-apps: No such file or directory
+[student@workstation ~]$ cd DO180-apps
+[student@workstation DO180-apps]$ ls
+example  nodejs-app  nodejs-helloworld  php-helloworld  README.md  temps  todoapp
+[student@workstation DO180-apps]$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+[student@workstation DO180-apps]$ git checkout -b testbranch
+Switched to a new branch 'testbranch'
+[student@workstation DO180-apps]$ echo "DO180" > TEST
+[student@workstation DO180-apps]$ git add .
+[student@workstation DO180-apps]$ git commint -am "DO180"
+git: 'commint' is not a git command. See 'git --help'.
+
+The most similar command is
+	commit
+[student@workstation DO180-apps]$ git commit -am "DO180"
+[testbranch fa8e5ae] DO180
+ 1 file changed, 1 insertion(+)
+ create mode 100644 TEST
+[student@workstation DO180-apps]$ git push --set-upstream origin testbranch
+Username for 'https://github.com': alanhrgOL
+Password for 'https://alanhrgOL@github.com': 
+remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+fatal: Authentication failed for 'https://github.com/alanhrgOL/DO180-apps/'
+[student@workstation DO180-apps]$ git push --set-upstream origin testbranch
+Username for 'https://github.com': alanhrgOL
+Password for 'https://alanhrgOL@github.com': 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 284 bytes | 284.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'testbranch' on GitHub by visiting:
+remote:      https://github.com/alanhrgOL/DO180-apps/pull/new/testbranch
+remote: 
+To https://github.com/alanhrgOL/DO180-apps
+ * [new branch]      testbranch -> testbranch
+Branch 'testbranch' set up to track remote branch 'testbranch' from 'origin'.
+[student@workstation DO180-apps]$ echo "OCP4.6" > TEST
+[student@workstation DO180-apps]$ git add .
+[student@workstation DO180-apps]$ git commit -am "OCP4.6"
+[testbranch db032e0] OCP4.6
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[student@workstation DO180-apps]$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 274 bytes | 274.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/alanhrgOL/DO180-apps
+   fa8e5ae..db032e0  testbranch -> testbranch
+[student@workstation DO180-apps]$ head README.md
+# DO180-apps
+DO180 Repository for Sample Applications
+[student@workstation DO180-apps]$ 
+
